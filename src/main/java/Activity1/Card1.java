@@ -29,11 +29,15 @@ public class Card1 {
 	 *                  containing the rank of the card
 	 * @param cardSuit  a <code>String</code> value
 	 *                  containing the suit of the card
+
 	 * @param cardPointValue an <code>int</code> value
 	 *                  containing the point value of the card
 	 */
 	public Card1(String cardRank, String cardSuit, int cardPointValue) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */ 
+		this.rank = cardRank;
+		this.suit  = cardSuit;
+		this.pointValue = cardPointValue;
 	}
 
 
@@ -43,7 +47,7 @@ public class Card1 {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return "";
+		return this.suit;
    }
 
 	/**
@@ -52,7 +56,7 @@ public class Card1 {
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return "";
+		return this.rank;
 
 	}
 
@@ -62,7 +66,7 @@ public class Card1 {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return -1;
+		return this.pointValue;
 
 	}
 
@@ -73,7 +77,13 @@ public class Card1 {
 	 *         false otherwise.
 	 */
 	public boolean matches(Card1 otherCard) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		if(this.suit.equals(otherCard.suit())){
+			if(this.rank.equals(otherCard.rank())){
+				if(this.pointValue == otherCard.pointValue()) {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 
@@ -90,7 +100,7 @@ public class Card1 {
 	@Override
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return "";
+		return this.rank + " of " + this.suit + "(point value = " + this.pointValue + ")";
 
 	}
 }

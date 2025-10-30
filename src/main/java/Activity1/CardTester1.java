@@ -10,5 +10,13 @@ public class CardTester1 {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		Card1 c1 = new Card1("Seven", "Spades", 7);
+		Card1 c2= new Card1("Jack", "Diamonds", 7);
+		Card1 c3= new Card1("Ace", "Diamonds", 7);
+		String rizz = c1.rank();
+		rizz = c2.suit();
+	    int gyat = c3.pointValue();
+		System.out.print(c3.toString());
+		System.out.print(c1.matches(c2));
 	}
 }

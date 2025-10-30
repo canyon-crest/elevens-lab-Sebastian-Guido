@@ -12,7 +12,7 @@ public class Deck2 {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private List<Card2> cards;
+	private ArrayList<Card2> cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -31,7 +31,12 @@ public class Deck2 {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck2(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList<Card2>();
+		for(int i = 0; i<ranks.length; i++) {
+			for(int j =0; j<suits.length; j++)
+			cards.add(new Card2(ranks[i],suits[j],values[i]));
+		}
+		size=cards.size();
 	}
 
 
@@ -41,7 +46,7 @@ public class Deck2 {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return true;
+		return size==0;
 	}
 
 	/**
@@ -50,7 +55,7 @@ public class Deck2 {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return -1;
+		return size;
 	}
 
 	/**
@@ -67,8 +72,12 @@ public class Deck2 {
 	 *         previously dealt.
 	 */
 	public Card2 deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return new Card2("","",-1);
+		if(isEmpty()) {
+			return null;
+			
+		}
+		size--;
+		return cards.get(size);
 	}
 
 	/**
